@@ -4,10 +4,12 @@ from Camera import Camera
 from Commander import Commander
 from ModuleHandler import ModuleHandler
 
-
+print("Spoofing camera...")
 camera = Camera()
 handler = ModuleHandler(camera)
 commander = Commander(handler)
+print("Done")
+
 while commander.run:
     start_time = time()
     fps = handler.getMode('f')
