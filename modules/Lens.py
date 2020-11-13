@@ -3,19 +3,20 @@ import dlib
 import cv2
 import imutils
 import math
+import os
 
 class Lens(Module):
     name = 'len'
     lenses = {}
-    enable = True
+    enable = False
     priority = 2
     printDots = False
 
     def setup(self):
         self.detector = dlib.get_frontal_face_detector()
-        self.predictor = dlib.shape_predictor("data/shape_predictor_68_face_landmarks.dat")
-        self.lenses['mustache'] = cv2.imread("img/mustache.png", -1)
-        self.lenses['glasses'] = cv2.imread("img/glasses.png", -1)
+        self.predictor = dlib.shape_predictor(os.path.join(os.path.dirname(__file__), "../data/shape_predictor_68_face_landmarks.dat"))
+        self.lenses['mustache'] = cv2.imread(os.path.join(os.path.dirname(__file__), "../img/mustache.png"), -1)
+        self.lenses['glasses'] = cv2.imread(os.path.join(os.path.dirname(__file__), "../img/glasses.png"), -1)
 
     def tick(self, img):
         gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)

@@ -1,4 +1,4 @@
-data/shape_predictor_68_face_landmarks.dat
+data/shape_predictor_68_face_landmarks.dat*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

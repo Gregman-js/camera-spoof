@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Fake Webcam
+Exec=/home/grzegorz/projects/fake-webcam/run.sh
+Icon=/home/grzegorz/projects/fake-webcam/img/icon.jpg
+Terminal=true
+Type=Application
