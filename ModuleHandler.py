@@ -6,6 +6,7 @@ from modules.Zw import Zw
 from modules.Glitch import Glitch
 from modules.Recording import Recording
 from modules.Lens import Lens
+from modules.Face import Face
 
 from modes.Fps import Fps
 from modes.Pause import Pause
@@ -23,7 +24,8 @@ class ModuleHandler:
             Zw(camera=camera),
             Glitch(),
             Recording(camera=camera, handler=self),
-            Lens()
+            Lens(),
+            Face(camera=camera),
         ]
         self.modes = {
             'f': Fps(),
